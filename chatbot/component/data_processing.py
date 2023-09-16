@@ -1,7 +1,9 @@
 # 2
 from chatbot.entity import cofig_entity,artifact_entity
 from chatbot.exception import ChatbotException
-# import tensorflow as tf
+import tensorflow as tf
+import tensorflow.keras as keras
+
 from tensorflow.keras.preprocessing.text import one_hot
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 

@@ -1,0 +1,2 @@
+BERT_PROCESSING_MODEL_NAME = "https://tfhub.dev/tensorflow/bert_en_uncased_preprocess/3"
+BERT_MODEL_NAME_4_SEQUENCE_CLASSIFACTION = "https://tfhub.dev/tensorflow/bert_en_uncased_L-12_H-768_A-12/4"

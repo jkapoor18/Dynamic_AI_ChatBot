@@ -1,7 +1,7 @@
 numpy
 pymongo
 tensorflow_hub
-tensorflow
+TensorFlow
 tensorflow_text
 keras
 -e .

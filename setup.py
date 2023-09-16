@@ -1,24 +1,26 @@
-from setuptools import find_packages,setup
-from typing import List
+from setuptools import find_packages, setup
 
-# to define all the dependency in our project by the setup.py file.
+# Define the path to the requirements file
 requirement_filePath = 'requirements.txt'
-editable_indiacator = '-e .'
-def get_requirements()->list[str]:
+editable_indicator = '-e .'
+
+def get_requirements():
     with open(requirement_filePath) as requirementFile:
         requirement_list = requirementFile.readlines()
-    requirement_list = [requirement.replace("\n","") for requirement in requirement_list]
-    # removing the editable_indicator from the requirements
-    if editable_indiacator in requirement_list:
-        requirement_list.remove(editable_indiacator)
+    requirement_list = [requirement.replace("\n", "") for requirement in requirement_list]
+    
+    # Remove the editable_indicator from the requirements
+    if editable_indicator in requirement_list:
+        requirement_list.remove(editable_indicator)
+    
     return requirement_list
 
-
-setup(name='custom_chatbot',
-      version='0.0.1', # every time when you will release your next time your project u wil have to change the version.
-      description='fully flexible custom chatbot.',
-      author='Ranjit Singh',
-      author_email='jiradhey402@gmail.com',    # mail must be associated with git
-      packages=find_packages(),     # it will find all the packages from your project.
-      install_reqires =get_requirements()  # varaible assigned by itself. to give the idea about dependencies.
+setup(
+    name='custom_chatbot',
+    version='0.0.1',
+    description='Fully flexible custom chatbot.',
+    author='Jyoti Kapoor',
+    author_email='jyotikpr999@gmail.com',
+    packages=find_packages(),
+    install_requires=get_requirements(),
 )

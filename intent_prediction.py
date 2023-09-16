@@ -3,6 +3,7 @@ from chatbot.exception import ChatbotException
 from chatbot.pipeline.training_pipeline import Training_Pipeline
 from chatbot.input_process.process_input_query import Input_Process
 from chatbot.logger import logging
+
 from chatbot.component.get_response import Get_Response
 from chatbot.entity import cofig_entity,artifact_entity
 import tensorflow as tf
@@ -22,9 +23,9 @@ class Intent_Prediction:
         # self.single_training = single_training
         self.max_sequence_length = 47        # <<< make dynamic it also
         self.current_lstm_model_file_path = ''
-        self.dict_with_label_file_path = r'C:\Users\Ranjit Singh\Desktop\working project\Dynamic_AI_ChatBot\base_model_artifact\Preprocessed_data\lstm_processed\label_with_tag.pkl'
+        self.dict_with_label_file_path = r'D:\Dynamic_AI_ChatBot-master\base_model_artifact\Preprocessed_data\lstm_processed\label_with_tag.pkl'
         self.constant_dict_label = {'greeting': 0, 'goodbye': 1, 'thanks': 2, 'noanswer': 3, 'name': 4, 'options': 5, 'india': 6, 'south_africa_info': 7, 'south_africa_facts': 8}
-        self.transformed_dict_path = r'C:\Users\Ranjit Singh\Desktop\working project\Dynamic_AI_ChatBot\base_model_artifact\Data_ingestion\Transformed\transformed_dict.pkl'
+        self.transformed_dict_path = r'D:\Dynamic_AI_ChatBot-master\base_model_artifact\Data_ingestion\Transformed\transformed_dict.pkl'
         self.temp = 0
     
     # Training case condition before getting the prediction
@@ -94,7 +95,7 @@ class Intent_Prediction:
 
             elif (change_data_parameter != False) or (manually_model_tained != False):
                 # keep the latest pretrained model
-                base_model_file_path = r"C:\Users\Ranjit Singh\Desktop\working project\Dynamic_AI_ChatBot\base_model_artifact\model_training\lstm_model.h5"
+                base_model_file_path = r"D:\Dynamic_AI_ChatBot-master\base_model_artifact\model_training\lstm_model.h5"
 
                # loading the base model 
                 latest_lstm_model_frm_artifact = tf.keras.models.load_model(filepath=base_model_file_path)
